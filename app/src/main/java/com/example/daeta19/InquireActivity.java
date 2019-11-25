@@ -10,6 +10,7 @@ public class InquireActivity extends AppCompatActivity {
 
     private ImageButton back_btn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
