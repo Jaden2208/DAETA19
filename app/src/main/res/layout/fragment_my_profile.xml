@@ -57,7 +57,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/send_btn"
+            android:id="@+id/btn_send"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="프로필수정"
