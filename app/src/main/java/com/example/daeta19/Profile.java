@@ -4,6 +4,9 @@ import android.media.Image;
 
 public class Profile {
     private Image profile;
+    private String name;
+    private int age;
+    private int count;
     private String star;
     private String score;
     private String sex;
@@ -11,13 +14,16 @@ public class Profile {
     private String location;
     private String time;
 
-    public Profile(String star, String score, String sex, String career, String location, String time) {
+    public Profile(String star, String score, String sex, String career, String location, String time , String name, int age, int count) {
         this.star = star;
         this.score = score;
         this.sex = sex;
         this.career = career;
         this.location = location;
         this.time = time;
+        this.name = name;
+        this.age = age;
+        this.count = count;
     }
 
     public Image getProfile() {
@@ -34,6 +40,30 @@ public class Profile {
 
     public void setStar(String star) {
         this.star = star;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public String getScore() {
