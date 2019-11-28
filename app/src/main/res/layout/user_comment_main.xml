@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary">
+
+        <!--뒤로가기 화살표 버튼-->
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back_white_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <!--유저 프로필 사진-->
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/user_profile"
+            />
+        <!--유저 정보-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:text="이상민"
+                android:textSize="13dp"
+                android:textColor="@android:color/white"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:text="남 / 24"
+                android:textSize="13dp"
+                android:textColor="@android:color/white"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:text="게시일 : 2019/11/13"
+                android:textSize="13dp"
+                android:textColor="@android:color/white"
+
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!--스크랩 버튼-->
+        <LinearLayout
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:background="@android:color/holo_blue_light"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+                <TextView
+                    android:id="@+id/btn_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="스크랩"
+                    android:textColor="@android:color/white"
+                    android:clickable="true"
+                    />
+        </LinearLayout>
+
+        <!--신고버튼; 이미지 필요-->
+        <ImageButton
+            android:id="@+id/btn_report"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/report_icon"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray"
+        android:layout_below="@+id/layout1"/>
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_above="@+id/layout3"
+        android:layout_below="@+id/layout1"
+        >
+
+    </ListView>
+
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray"
+        android:layout_above="@+id/layout3"/>
+
+    <!--하단 버튼 레이아웃. id는 어떤기준인가유-->
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="신청"
+            android:textSize="18dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@android:color/holo_blue_light"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:clickable="true"
+            />
+        <TextView
+            android:id="@+id/btn_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="댓글"
+            android:textSize="18dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@color/colorGray"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:clickable="true"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

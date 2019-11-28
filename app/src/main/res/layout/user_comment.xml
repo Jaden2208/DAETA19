@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    >
+
+    <!--알바 프로필-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/user_profile"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
+
+        <!--알바 이름-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="김채원"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            />
+
+        <!--알바 평가글 등록 날짜-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="2019/11/25"
+            android:textSize="11sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_weight="6"
+            android:layout_marginLeft="5dp"
+            android:paddingTop="11dp"
+            />
+
+    </LinearLayout>
+
+    <!--알바에 대한 평가-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_reply"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:weightSum="1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:weightSum="1"
+            android:layout_weight="0.3"
+            >
+            <ImageView
+                android:id="@+id/star_rating1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/stars_rating"
+                android:layout_weight="0.05"
+                />
+            <ImageView
+                android:id="@+id/star_rating2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/stars_rating"
+                android:layout_weight="0.05"
+                />
+            <ImageView
+                android:id="@+id/star_rating3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/stars_rating"
+                android:layout_weight="0.05"
+                />
+            <ImageView
+                android:id="@+id/star_rating4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/stars_rating"
+                android:layout_weight="0.05"
+                />
+            <ImageView
+                android:id="@+id/star_rating5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/stars_rating"
+                android:layout_weight="0.05"
+                />
+            <TextView
+                android:id="@+id/user_star_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평점 : 5.0"
+                android:layout_weight="10"
+                android:paddingLeft="5dp"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBlue"
+            android:layout_above = "@+id/user_comment"
+            />
+
+        <TextView
+            android:id="@+id/user_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="성실해요~"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center"
+            android:layout_weight="0.7"
+            />
+
+    </LinearLayout>
+
+
+    <ImageView
+            android:id="@+id/store_img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/round_rectangle_blue"/>
+
+
+
+
+
+
+</LinearLayout>
