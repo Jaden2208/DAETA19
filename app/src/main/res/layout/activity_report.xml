@@ -114,28 +114,6 @@
                 android:orientation="vertical"
                 >
 
-
-                <ImageButton
-                    android:id="@+id/report_btn"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="right"
-                    android:background="@drawable/ic_report_black_24dp"/>
-
-                <Button
-                    android:id="@+id/scrap_btn"
-                    android:layout_width="50dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/round_rectangle_blue_button"
-                    android:gravity="bottom"
-                    android:text="스크랩"
-                    android:textColor="#ffffff"
-                    android:textSize="13dp"
-                    android:textStyle="bold" />
-
             </LinearLayout>
 
         </LinearLayout>
