@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PostHireReportActivity"></activity>
-        <activity android:name=".HireActivity" />
-        <activity android:name=".PostHireActivity" />
-        <activity android:name=".UserProfile" />
-        <activity android:name=".WritingProfileActivity" />
+        <activity android:name=".WritingProfileActivity"></activity>
         <activity android:name=".UserProfile" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".NotificationSettingActivity" />
@@ -21,6 +17,8 @@
         <activity android:name=".OtherSettingActivity" />
         <activity android:name=".InquireActivity" />
         <activity android:name=".SettingActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ReportActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
