@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WritingProfileActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".WritingProfileActivity" />
         <activity android:name=".UserProfile" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".NotificationSettingActivity" />
