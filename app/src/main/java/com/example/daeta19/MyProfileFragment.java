@@ -20,7 +20,7 @@ public class MyProfileFragment extends Fragment {
     }
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.send_btn:
+            case R.id.btn_send:
                 Intent intent = new Intent(getActivity(), WritingProfileActivity.class);
                 startActivity(intent);
                 break;
