@@ -25,6 +25,7 @@ public class HireFragment extends Fragment {
         // Inflate the layout for this fragment
 
         return inflater.inflate(R.layout.fragment_hire, container, false);
+
     }
     private GridView gridView;
 }
