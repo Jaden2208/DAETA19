@@ -68,7 +68,8 @@
             android:layout_marginHorizontal="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="@drawable/round_rectangle_blue_button"/>
+            android:background="@drawable/round_rectangle_blue_button"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
