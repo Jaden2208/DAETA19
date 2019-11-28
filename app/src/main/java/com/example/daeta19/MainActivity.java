@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        Log.d("kkk","MainNotiBtn");
 
         // 알림
         btn_notification = (ImageButton) findViewById(R.id.btn_notification);
@@ -64,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         // 설정
         btn_setting = (ImageButton) findViewById(R.id.btn_setting);

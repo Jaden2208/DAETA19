@@ -1,0 +1,105 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".SearchFragment">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/img_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:gravity="center"
+            android:src="@drawable/ic_person_black_24dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★ ★ ★ ★ ★"
+                android:textColor="#FFEB3B"
+                android:layout_marginLeft="20dp"
+                android:textSize="14dp"/>
+            <TextView
+                android:id="@+id/txt_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="(5.0)"
+                >
+
+            </TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="left"
+            android:text="성별 : 남"
+            android:textColor="#595754"
+            android:textSize="14sp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/txt_career"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="left"
+            android:text="경력 : 편의점, 카페, 음식점
+"
+            android:textColor="#595754"
+            android:textSize="14sp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/txt_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="left"
+            android:text="지역 : 동대문구, 노원구, 도봉구"
+            android:textColor="#595754"
+            android:textSize="14sp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="left"
+            android:text="시간 : 주말, 공휴일 15:00~23:00"
+            android:textColor="#595754"
+            android:textSize="14sp"
+            tools:ignore="DuplicateIds" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
