@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DAETA19</string>
+
+    <string name="facebook_application_id" translatable="false">2523283531126836</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb2523283531126836</string>
 </resources>

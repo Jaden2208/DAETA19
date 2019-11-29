@@ -35,6 +35,12 @@
             android:gravity="bottom"
             android:padding="10dp">
 
+            <Button
+                android:id="@+id/btn_sign_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="임시로그아웃버튼"/>
+
             <ImageButton
                 android:id="@+id/btn_notification"
                 android:layout_width="wrap_content"

@@ -3,6 +3,7 @@
     package="com.example.daeta19">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,12 +26,20 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".ReportActivity" />
         <activity android:name=".MainActivity">
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        출처: https://hearit.tistory.com/21 [hear.IT]
     </application>
 
 </manifest>
