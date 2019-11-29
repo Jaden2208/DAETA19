@@ -15,6 +15,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".WritingProfileActivity" />
         <activity android:name=".UserProfile" />
+        <activity android:name=".PostHireReportActivity"></activity>
+        <activity android:name=".PostHireActivity" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".NotificationSettingActivity" />
         <activity android:name=".NoticeActivity" />

@@ -20,9 +20,7 @@ public class ProfileAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
-        return item.get(position);
-    }
+    public Object getItem(int position) { return item.get(position); }
 
     @Override
     public long getItemId(int position) {

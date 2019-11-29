@@ -68,8 +68,7 @@
             android:layout_height="wrap_content"
             android:background="#ffffff"
             android:gravity="left"
-            android:text="경력 : 편의점, 카페, 음식점
-"
+            android:text="경력 : 편의점, 카페, 음식점"
             android:textColor="#595754"
             android:textSize="14sp"
             tools:ignore="DuplicateIds" />
