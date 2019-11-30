@@ -64,10 +64,10 @@ public class LoginActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 // Get User
                 final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                Log.d("kkkisEmailVerified?", String.valueOf(user.isEmailVerified()));
 
                 if (user != null) {
-                    if ("firebase" .equals(user.getProviderData().get(0).getProviderId())) {
+                    Log.d("kkk", user.getProviderData().get(1).getProviderId());
+                    if ("password" .equals(user.getProviderData().get(1).getProviderId())) {
                         if (!user.isEmailVerified()) {
                             user.sendEmailVerification()
                                     .addOnCompleteListener(this, new OnCompleteListener<Void>() {
@@ -101,13 +101,16 @@ public class LoginActivity extends AppCompatActivity {
                                         }
                                     });
                         } else {
-                            userSessionManager.createSession(user.getUid());
-                            Log.d("kkk", userSessionManager.getUserDetail().get("UID"));
 
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
                         }
+                    }
+                    else {
+                        userSessionManager.createSession(user.getUid());
+                        Log.d("kkk", userSessionManager.getUserDetail().get("UID"));
+
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 }
 
