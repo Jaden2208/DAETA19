@@ -33,9 +33,9 @@ public class ViewSettingActivity extends AppCompatActivity {
         btn_album = (ImageButton) findViewById(R.id.btn_album);
 
 
-        String user_style = user.get("VIEW_STYLE");
-        Log.d("kkkuserstyle", "" + user_style);
-        if(user_style.equals("게시글")) {
+        view_style = user.get("VIEW_STYLE");
+        Log.d("kkkuserstyle", "" + view_style);
+        if(view_style.equals("게시글")) {
             setBoardStyleOn();
 //            btn_board.setImageResource(R.drawable.ic_radio_button_checked_black_24dp);
 //            btn_album.setImageResource(R.drawable.ic_radio_button_unchecked_black_24dp);
