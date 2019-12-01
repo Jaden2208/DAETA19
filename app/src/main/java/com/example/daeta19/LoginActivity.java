@@ -29,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     private static final int MY_REQUEST_CODE = 1919;
     List<AuthUI.IdpConfig> providers;
 
+    String DEFAULT_VIEW_STYLE = "게시글";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,12 +102,10 @@ public class LoginActivity extends AppCompatActivity {
                                             }
                                         }
                                     });
-                        } else {
-
                         }
                     }
                     else {
-                        userSessionManager.createSession(user.getUid());
+                        userSessionManager.createSession(user.getUid(), DEFAULT_VIEW_STYLE);
                         Log.d("kkk", userSessionManager.getUserDetail().get("UID"));
 
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);

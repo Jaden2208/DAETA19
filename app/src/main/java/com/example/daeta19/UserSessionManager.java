@@ -16,6 +16,7 @@ public class UserSessionManager {
 
     private static final String LOGIN = "IS_LOGIN";
     private static final String UID = "UID";
+    private static final String VIEW_STYLE = "VIEW_STYLE";
 
     public UserSessionManager(Context context){
         this.context = context;
@@ -23,9 +24,10 @@ public class UserSessionManager {
         editor = sharedPreferences.edit();
     }
 
-    public void createSession(String uid){
+    public void createSession(String uid, String view_style){
         editor.putBoolean(LOGIN, true);
         editor.putString(UID, uid);
+        editor.putString(VIEW_STYLE, view_style);
         editor.apply();
     }
 
@@ -47,11 +49,12 @@ public class UserSessionManager {
 
         HashMap<String, String> user = new HashMap<>();
         user.put(UID, sharedPreferences.getString(UID, null));
+        user.put(UID, sharedPreferences.getString(VIEW_STYLE, null));
 
         return user;
     }
 
-    public String getCurrentID() {
+    public String getCurrentUID() {
         return sharedPreferences.getString(UID, null);
     }
 
