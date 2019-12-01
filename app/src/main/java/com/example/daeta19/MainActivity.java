@@ -57,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 userSessionManager.logout();
-//                                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//                                startActivity(intent);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override

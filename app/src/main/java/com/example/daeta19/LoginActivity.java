@@ -103,6 +103,14 @@ public class LoginActivity extends AppCompatActivity {
                                         }
                                     });
                         }
+                        else{
+                            userSessionManager.createSession(user.getUid(), DEFAULT_VIEW_STYLE);
+                            Log.d("kkk", userSessionManager.getUserDetail().get("UID"));
+
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                     else {
                         userSessionManager.createSession(user.getUid(), DEFAULT_VIEW_STYLE);

@@ -12,11 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".ViewSettingActivity"
+            android:theme="@style/popupTheme"/>
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".WritingProfileActivity" />
         <activity android:name=".UserProfile" />
-        <activity android:name=".PostHireReportActivity"/>
+        <activity android:name=".PostHireReportActivity" />
         <activity android:name=".PostHireActivity" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".NotificationSettingActivity" />
@@ -25,7 +27,7 @@
         <activity android:name=".InquireActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".ReportActivity" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -33,10 +35,10 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

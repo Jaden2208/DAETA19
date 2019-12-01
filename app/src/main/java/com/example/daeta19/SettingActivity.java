@@ -77,7 +77,8 @@ public class SettingActivity extends AppCompatActivity {
         btn_viewStyle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog();
+                Intent intent = new Intent(SettingActivity.this, ViewSettingActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -88,65 +89,6 @@ public class SettingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SettingActivity.this, NotificationSettingActivity.class);
                 startActivity(intent);
-            }
-        });
-    }
-
-
-    private void showDialog() {
-        LayoutInflater dialog = LayoutInflater.from(this);
-        final View dialogLayout = dialog.inflate(R.layout.view_style_dialog, null);
-        final Dialog myDialog = new Dialog(this);
-
-        final String[] style = new String[1];
-
-//        typeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                RadioButton typeButton = (RadioButton) findViewById(checkedId);
-//                String type = typeButton.getText().toString();
-//
-//                Toast.makeText(SettingActivity.this, type + "클릭", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-        myDialog.setContentView(dialogLayout);
-        myDialog.show();
-
-        // 게시글 선택 시
-        ImageButton board_style = (ImageButton) findViewById(R.id.board_style);
-        board_style.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                style[0] = "게시글";
-            }
-        });
-
-        // 게시글 선택 시
-        ImageButton album_style = (ImageButton) findViewById(R.id.album_style);
-        board_style.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                style[0] = "앨범";
-            }
-        });
-
-        // 확인 버튼 클릭 시
-        Button btn_ok = (Button) dialogLayout.findViewById(R.id.btn_ok);
-        btn_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(SettingActivity.this, style[0] + " 형식으로 보기방식이 변경되었습니다.", Toast.LENGTH_SHORT).show();
-                myDialog.cancel();
-            }
-        });
-
-        Button btn_cancel = (Button) dialogLayout.findViewById(R.id.btn_cancel);
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myDialog.cancel();
             }
         });
     }

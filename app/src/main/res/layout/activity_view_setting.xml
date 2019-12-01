@@ -73,7 +73,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/board_style"
+                android:id="@+id/btn_board"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -86,7 +86,7 @@
                 android:focusable="true" />
 
             <ImageButton
-                android:id="@+id/album_style"
+                android:id="@+id/btn_album"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
