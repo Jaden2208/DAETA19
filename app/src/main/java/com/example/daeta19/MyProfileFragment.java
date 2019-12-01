@@ -11,20 +11,32 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class MyProfileFragment extends Fragment {
+    Button btn_edit_profile;
 
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-    }
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_send:
+        btn_edit_profile = (Button) getView().findViewById(R.id.btn_edit_profile);
+        btn_edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), WritingProfileActivity.class);
                 startActivity(intent);
-                break;
-        }}
+            }
+        });
+
+    }
+
+//    public void onClick(View view) {
+//        switch (view.getId()) {
+//            case R.id.btn_edit_profile:
+//                Intent intent = new Intent(getActivity(), WritingProfileActivity.class);
+//                startActivity(intent);
+//                break;
+//        }
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

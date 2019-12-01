@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".WritingProfileActivity">
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -174,7 +182,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_orange"
             android:text="서울"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
 
         <Button
@@ -183,7 +191,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_orange"
             android:text="경기"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button13"
@@ -191,7 +199,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_orange"
             android:text="강북"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button14"
@@ -199,7 +207,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_orange"
             android:text="강남"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -215,7 +223,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_orange"
             android:text="서울"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
 
         <Button
@@ -224,7 +232,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_orange"
             android:text="경기"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button17"
@@ -232,7 +240,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_orange"
             android:text="강북"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button18"
@@ -471,5 +479,8 @@
         android:textColor="#ffffff"
         android:textSize="40sp" />
 
+
+</LinearLayout>
+</ScrollView>
 
 </LinearLayout>
