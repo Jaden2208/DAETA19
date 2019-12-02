@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "681147097165",
+    "firebase_url": "https://daeta19.firebaseio.com",
+    "project_id": "daeta19",
+    "storage_bucket": "daeta19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681147097165:android:1e17ef3a91a864e9763c04",
+        "android_client_info": {
+          "package_name": "com.example.daeta19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681147097165-5fq91q9e6uiptmfn7mh2ib407ouk10kg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.daeta19",
+            "certificate_hash": "b63df10a03a4b2316fae464b481aab7bcfee9c88"
+          }
+        },
+        {
+          "client_id": "681147097165-s2u0ab6b0ua4adjjpkvgovp64bperhdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8sfbeRNQYV2nrKnYMTOJZFdW3Fvr5HUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681147097165-s2u0ab6b0ua4adjjpkvgovp64bperhdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

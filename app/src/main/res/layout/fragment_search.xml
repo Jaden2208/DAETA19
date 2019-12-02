@@ -59,8 +59,11 @@
                 android:textSize="30sp" />
 
             <ListView
+                android:id="@+id/search_list1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                />
 
         </LinearLayout>
 
@@ -86,6 +89,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:paddingLeft="5dp"
+
                     android:layout_weight="1">
 
                     <TextView
@@ -94,14 +99,18 @@
                         android:text="모집공고"/>
 
                     <ListView
+                        android:id="@+id/search_list2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:paddingLeft="5dp"
+
                     android:layout_weight="1">
 
                     <TextView
@@ -110,8 +119,10 @@
                         android:text="모집공고"/>
 
                     <ListView
+                        android:id="@+id/search_list3"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        />
 
                 </LinearLayout>
 

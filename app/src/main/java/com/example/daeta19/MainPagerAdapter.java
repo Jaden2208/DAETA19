@@ -1,14 +1,16 @@
 package com.example.daeta19;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
     int numOfTabs;
-    public MainPagerAdapter(FragmentManager fm, int ntabs) {
-        super(fm);
-        this.numOfTabs = ntabs;
+
+    public MainPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+        super(fm, behavior);
+        this.numOfTabs = behavior;
     }
 
     @Override
