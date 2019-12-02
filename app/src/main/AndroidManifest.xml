@@ -28,6 +28,9 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".ReportActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name="ReplyItemData"/>
+        <activity android:name=".CommentActivity"/>
+        <activity android:name="ReplyListAdapter"/>
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"

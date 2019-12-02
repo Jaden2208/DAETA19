@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--댓글 리스트뷰의 아이템 하나의 레이아웃입니다.-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -11,7 +12,9 @@
         android:layout_height="40dp"
         android:orientation="horizontal"
         >
+        <!--점주프로필사진-->
         <ImageView
+            android:id="@+id/StoreImage"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:src="@drawable/user_profile"
@@ -19,8 +22,9 @@
             android:layout_weight="1"
             />
 
-        <!--알바 이름-->
+        <!--점주 이름-->
         <TextView
+            android:id="@+id/StoreName"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="김채원"
@@ -31,8 +35,9 @@
             android:layout_marginLeft="5dp"
             />
 
-        <!--알바 평가글 등록 날짜-->
+        <!--알바에 대한 평가글 등록 날짜 *텍스트뷰로 하는게 맞나요?*-->
         <TextView
+            android:id="@+id/CommentDate"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="2019/11/25"
@@ -111,34 +116,29 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/colorBlue"
-            android:layout_above = "@+id/user_comment"
+            android:layout_above = "@+id/StoreComment"
             />
 
         <TextView
-            android:id="@+id/user_comment"
+            android:id="@+id/StoreComment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="성실해요~"
+            android:layout_weight="0.7"
+            android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:gravity="center"
-            android:layout_weight="0.7"
-            />
+            android:text="성실해요~" />
 
     </LinearLayout>
 
 
+    <!-- 이게 뭐였는지 찾는중
     <ImageView
-            android:id="@+id/store_img"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/round_rectangle_blue"/>
-
-
-
-
-
+        android:id="@+id/store_img"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:src="@drawable/round_rectangle_blue"/> -->
 
 </LinearLayout>
