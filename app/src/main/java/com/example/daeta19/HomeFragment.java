@@ -1,5 +1,6 @@
 package com.example.daeta19;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 public class HomeFragment extends Fragment {
 
     private Button btn_changeHome;
+    private Button detail;
     private Boolean isHirePage = true;
     private HireFragment hireFragment;
     private EmployeeFragment employeeFragment;
@@ -32,6 +34,7 @@ public class HomeFragment extends Fragment {
 
         btn_changeHome = (Button) getView().findViewById(R.id.btn_changeHome);
         // 버튼 클릭시 화면 전환
+
         btn_changeHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +55,10 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
+        detail = (Button) getView().findViewById(R.id.detail);
+        
+
     }
 
     @Override

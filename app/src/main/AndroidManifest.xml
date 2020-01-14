@@ -12,8 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewSettingActivity"
-            android:theme="@style/popupTheme"/>
+        <activity android:name=".firetest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ViewSettingActivity"
+            android:theme="@style/popupTheme" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".WritingProfileActivity" />
@@ -28,9 +37,9 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".ReportActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name="ReplyItemData"/>
-        <activity android:name=".CommentActivity"/>
-        <activity android:name="ReplyListAdapter"/>
+        <activity android:name=".ReplyItemData" />
+        <activity android:name=".CommentActivity" />
+        <activity android:name=".ReplyListAdapter" />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
