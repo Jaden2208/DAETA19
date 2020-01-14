@@ -8,26 +8,26 @@
     tools:context=".firetest">
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/name_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="이름"
         ></EditText>
     <EditText
-        android:id="@+id/age"
+        android:id="@+id/age_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="나이"
         ></EditText>
     <EditText
-        android:id="@+id/sex"
+        android:id="@+id/sex_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="성별"
         ></EditText>
 
     <Button
-        android:id="@+id/push"
+        android:id="@+id/push_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="push" />

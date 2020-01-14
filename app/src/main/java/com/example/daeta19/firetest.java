@@ -1,16 +1,57 @@
 package com.example.daeta19;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class firetest extends AppCompatActivity {
+
+    DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firetest);
+
+        //아이디 정의
+        Button push_btn = (Button) findViewById(R.id.push_btn);
+        final EditText name_add = (EditText) findViewById(R.id.name_add);
+        final EditText age_add = (EditText) findViewById(R.id.age_add);
+        final EditText sex_add = (EditText) findViewById(R.id.sex_add);
+
+        //온클릭리스너
+        push_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //edittext에 저장된 텍스트 Strig에 저장
+                String get_name = name_add.getText().toString();
+                String get_age = age_add.getText().toString();
+                String get_sex = sex_add.getText().toString();
+
+
+                //hashmap 만들기
+                HashMap result = new HashMap<>();
+                result.put("name", get_name);
+                result.put("age", get_age);
+                result.put("sex", get_sex);
+
+                //firebase 정의
+                mDatabase = FirebaseDatabase.getInstance().getReference();
+                //firebase에 저장
+                mDatabase.child("article").push().setValue(result);
+
+            }
+        });
     }
 
-
 }
+
+
