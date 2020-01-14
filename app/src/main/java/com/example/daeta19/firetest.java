@@ -7,6 +7,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -15,6 +17,8 @@ import java.util.HashMap;
 public class firetest extends AppCompatActivity {
 
     DatabaseReference mDatabase;
+    FirebaseDatabase db;
+    UserSessionManager userSessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,11 @@ public class firetest extends AppCompatActivity {
         final EditText name_add = (EditText) findViewById(R.id.name_add);
         final EditText age_add = (EditText) findViewById(R.id.age_add);
         final EditText sex_add = (EditText) findViewById(R.id.sex_add);
+
+
+
+
+
 
         //온클릭리스너
         push_btn.setOnClickListener(new View.OnClickListener() {
@@ -44,10 +53,16 @@ public class firetest extends AppCompatActivity {
                 result.put("sex", get_sex);
 
                 //firebase 정의
-                mDatabase = FirebaseDatabase.getInstance().getReference();
+                //mDatabase = FirebaseDatabase.getInstance().getReference();
                 //firebase에 저장
-                mDatabase.child("article").push().setValue(result);
+                //mDatabase.child("article").child("dk").push().setValue(result);
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+                String uid = user.getUid();
+
+                db = FirebaseDatabase.getInstance();
+                mDatabase = db.getReference(uid);
+                mDatabase.setValue(result);
             }
         });
     }

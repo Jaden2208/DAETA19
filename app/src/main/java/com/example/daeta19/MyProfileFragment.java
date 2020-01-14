@@ -22,7 +22,7 @@ public class MyProfileFragment extends Fragment {
         btn_edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), WritingProfileActivity.class);
+                Intent intent = new Intent(getActivity(), firetest.class);
                 startActivity(intent);
             }
         });
