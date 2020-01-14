@@ -56,13 +56,14 @@ public class firetest extends AppCompatActivity {
                 //mDatabase = FirebaseDatabase.getInstance().getReference();
                 //firebase에 저장
                 //mDatabase.child("article").child("dk").push().setValue(result);
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+                // user 토큰 가져오기
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 String uid = user.getUid();
 
                 db = FirebaseDatabase.getInstance();
-                mDatabase = db.getReference(uid);
-                mDatabase.setValue(result);
+                mDatabase = db.getReference("users");
+                mDatabase.child(uid).setValue(result);
             }
         });
     }
