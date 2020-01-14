@@ -4,13 +4,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -27,9 +31,29 @@ public class firetest extends AppCompatActivity {
 
         //아이디 정의
         Button push_btn = (Button) findViewById(R.id.push_btn);
+        Button toast_btn = (Button) findViewById(R.id.toast_btn);
+
+
+
         final EditText name_add = (EditText) findViewById(R.id.name_add);
         final EditText age_add = (EditText) findViewById(R.id.age_add);
         final EditText sex_add = (EditText) findViewById(R.id.sex_add);
+
+
+        FirebaseDatabase.getInstance().getReference().addValueEventListener(new ValueEventListener() {
+            TextView infos = (TextView) findViewById(R.id.info);
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Object value = dataSnapshot.getValue(Object.class);
+                infos.setText(value.toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
 
 
