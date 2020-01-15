@@ -74,21 +74,29 @@ public class EmployeeFragment extends Fragment {
 
         db = FirebaseDatabase.getInstance();
         mDatabase = db.getReference("users");
-        //원하는 타겟의 정보 가져오기.
+
         mDatabase.child(uid).child("settings").child("ViewType").addListenerForSingleValueEvent(new ValueEventListener() {
             int viewtype ;
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                viewtype = Integer.parseInt(dataSnapshot.getValue().toString());
-                gridView.setNumColumns(viewtype);
-            }
+                if((dataSnapshot.getValue()) !=null){
+                    viewtype = Integer.parseInt(dataSnapshot.getValue().toString());
+                    gridView.setNumColumns(viewtype);
+                }
+                else{
+                    gridView.setNumColumns(1);
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                gridView.setNumColumns(1);
+                }
 
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+
+
+        //원하는 타겟의 정보 가져오기.
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

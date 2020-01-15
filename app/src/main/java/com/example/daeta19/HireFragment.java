@@ -77,17 +77,19 @@ public class HireFragment extends Fragment {
             int viewtype ;
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                viewtype = Integer.parseInt(dataSnapshot.getValue().toString());
-                gridView.setNumColumns(viewtype);
+                if((dataSnapshot.getValue()) !=null){
+                    viewtype = Integer.parseInt(dataSnapshot.getValue().toString());
+                    gridView.setNumColumns(viewtype);
+                }
+                else{
+                    gridView.setNumColumns(1);
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                gridView.setNumColumns(1);
-
             }
         });
-
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
