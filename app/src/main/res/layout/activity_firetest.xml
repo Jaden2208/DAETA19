@@ -40,7 +40,7 @@
         android:id="@+id/carrer_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="대타횟수"
+        android:hint="희망지역"
         ></EditText>
     <EditText
         android:id="@+id/location_add"

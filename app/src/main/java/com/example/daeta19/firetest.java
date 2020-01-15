@@ -55,7 +55,7 @@ public class firetest extends AppCompatActivity {
 
                 db = FirebaseDatabase.getInstance();
                 mDatabase = db.getReference("users");
-
+                //원하는 타겟의 정보 가져오기.
                 mDatabase.child(uid).child("name").addListenerForSingleValueEvent(new ValueEventListener() {
                     String name ;
                     @Override
@@ -92,11 +92,6 @@ public class firetest extends AppCompatActivity {
                 String get_carrer = carrer_add.getText().toString();
                 String get_count = count_add.getText().toString();
                 int age = Integer.parseInt(get_age);
-
-
-                //성격 지역 요일 횟수 경력 시간
-
-                //이름 나이 직종 성격 장소
 
                 //hashmap 만들기
                 HashMap result = new HashMap<>();
