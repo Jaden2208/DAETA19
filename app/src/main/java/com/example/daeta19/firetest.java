@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +30,8 @@ public class firetest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firetest);
 
+
+
         //아이디 정의
         Button push_btn = (Button) findViewById(R.id.push_btn);
         Button toast_btn = (Button) findViewById(R.id.toast_btn);
@@ -38,24 +41,40 @@ public class firetest extends AppCompatActivity {
         final EditText name_add = (EditText) findViewById(R.id.name_add);
         final EditText age_add = (EditText) findViewById(R.id.age_add);
         final EditText sex_add = (EditText) findViewById(R.id.sex_add);
+        final EditText time_add = (EditText) findViewById(R.id.time_add);
+        final EditText location_add = (EditText) findViewById(R.id.location_add);
+        final EditText carrer_add = (EditText) findViewById(R.id.carrer_add);
+        final EditText count_add = (EditText) findViewById(R.id.count_add);
 
-
-        FirebaseDatabase.getInstance().getReference().addValueEventListener(new ValueEventListener() {
-            TextView infos = (TextView) findViewById(R.id.info);
+        toast_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Object value = dataSnapshot.getValue(Object.class);
-                infos.setText(value.toString());
-            }
+            public void onClick(View v) {
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = user.getUid();
+
+                db = FirebaseDatabase.getInstance();
+                mDatabase = db.getReference("users");
+
+                mDatabase.child(uid).child("name").addListenerForSingleValueEvent(new ValueEventListener() {
+                    String name ;
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        name = dataSnapshot.getValue().toString();
+                        TextView text = (TextView) findViewById(R.id.info);
+                        text.setText(name);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
 
             }
         });
-
-
-
 
 
 
@@ -68,13 +87,28 @@ public class firetest extends AppCompatActivity {
                 String get_name = name_add.getText().toString();
                 String get_age = age_add.getText().toString();
                 String get_sex = sex_add.getText().toString();
+                String get_time = time_add.getText().toString();
+                String get_location = location_add.getText().toString();
+                String get_carrer = carrer_add.getText().toString();
+                String get_count = count_add.getText().toString();
+                int age = Integer.parseInt(get_age);
 
+
+                //성격 지역 요일 횟수 경력 시간
+
+                //이름 나이 직종 성격 장소
 
                 //hashmap 만들기
                 HashMap result = new HashMap<>();
                 result.put("name", get_name);
-                result.put("age", get_age);
+                result.put("age", age);
                 result.put("sex", get_sex);
+                result.put("count", get_count);
+                result.put("star", "0");
+                result.put("score", "0");
+                result.put("career", get_carrer);
+                result.put("location", get_location);
+                result.put("time", get_time);
 
                 //firebase 정의
                 //mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -90,6 +124,8 @@ public class firetest extends AppCompatActivity {
                 mDatabase.child(uid).setValue(result);
             }
         });
+
+
     }
 
 }

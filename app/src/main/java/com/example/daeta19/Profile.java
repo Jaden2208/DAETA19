@@ -1,9 +1,7 @@
 package com.example.daeta19;
 
-import android.media.Image;
-
 public class Profile {
-    private Image profile;
+    private String profile;
     private String name;
     private int age;
     private int count;
@@ -26,11 +24,11 @@ public class Profile {
         this.count = count;
     }
 
-    public Image getProfile() {
+    public String getProfile() {
         return profile;
     }
 
-    public void setProfile(Image profile) {
+    public void setProfile(String profile) {
         this.profile = profile;
     }
 
