@@ -23,7 +23,6 @@ public class firetest extends AppCompatActivity {
 
     DatabaseReference mDatabase;
     FirebaseDatabase db;
-    UserSessionManager userSessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,7 @@ public class firetest extends AppCompatActivity {
                 db = FirebaseDatabase.getInstance();
                 mDatabase = db.getReference("users");
                 //원하는 타겟의 정보 가져오기.
-                mDatabase.child(uid).child("name").addListenerForSingleValueEvent(new ValueEventListener() {
+                mDatabase.child(uid).child("userinfo").child("name").addListenerForSingleValueEvent(new ValueEventListener() {
                     String name ;
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -116,7 +115,7 @@ public class firetest extends AppCompatActivity {
 
                 db = FirebaseDatabase.getInstance();
                 mDatabase = db.getReference("users");
-                mDatabase.child(uid).setValue(result);
+                mDatabase.child(uid).child("userinfo").setValue(result);
             }
         });
 

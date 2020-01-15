@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -53,6 +52,9 @@ public class HireFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_hire, container, false);
         gridView = (GridView)view.findViewById(R.id.hire_grid_view);
         gridView.setAdapter(adapter);
+
+
+        gridView.setNumColumns(2);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
