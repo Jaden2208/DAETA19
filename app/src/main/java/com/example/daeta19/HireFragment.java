@@ -8,12 +8,24 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class HireFragment extends Fragment {
+
+    DatabaseReference mDatabase;
+    FirebaseDatabase db;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -54,7 +66,28 @@ public class HireFragment extends Fragment {
         gridView.setAdapter(adapter);
 
 
-        gridView.setNumColumns(2);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        db = FirebaseDatabase.getInstance();
+        mDatabase = db.getReference("users");
+        //원하는 타겟의 정보 가져오기.
+        mDatabase.child(uid).child("settings").child("ViewType").addListenerForSingleValueEvent(new ValueEventListener() {
+            int viewtype ;
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                viewtype = Integer.parseInt(dataSnapshot.getValue().toString());
+                gridView.setNumColumns(viewtype);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                gridView.setNumColumns(1);
+
+            }
+        });
+
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
