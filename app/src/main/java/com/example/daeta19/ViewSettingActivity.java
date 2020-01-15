@@ -1,13 +1,18 @@
 package com.example.daeta19;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
@@ -18,6 +23,8 @@ public class ViewSettingActivity extends AppCompatActivity {
     String view_style;
     Button btn_ok;
     Button btn_cancel;
+    DatabaseReference mDatabase;
+    FirebaseDatabase db;
 
     UserSessionManager userSessionManager = null;
 
@@ -53,6 +60,7 @@ public class ViewSettingActivity extends AppCompatActivity {
 //                btn_board.setImageResource(R.drawable.ic_radio_button_checked_black_24dp);
 //                btn_album.setImageResource(R.drawable.ic_radio_button_unchecked_black_24dp);
                 view_style = "게시글";
+
             }
         });
 
@@ -75,6 +83,23 @@ public class ViewSettingActivity extends AppCompatActivity {
                 Toast.makeText(ViewSettingActivity.this,
                         view_style + " 형식으로 보기방식이 변경되었습니다.", Toast.LENGTH_SHORT)
                         .show();
+
+
+                HashMap result = new HashMap<>();
+                if(view_style.equals("게시글")){
+                    result.put("ViewType", 1);
+                }
+                else{
+                    result.put("ViewType", 2);
+                }
+
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = user.getUid();
+
+                db = FirebaseDatabase.getInstance();
+                mDatabase = db.getReference("users");
+                mDatabase.child(uid).child("settings").setValue(result);
+
                 finish();
             }
         });

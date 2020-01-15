@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 public class MyProfileFragment extends Fragment {
     Button btn_edit_profile;
 
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
